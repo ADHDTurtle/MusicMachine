@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Profile</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<div id="container">
+		<div id="top">
+			<a href="index.html">
+			<img src="logo.png" alt="Music Machine Logo" class="logo">
+			</a>
+			<ul class="navbar">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="discover.php">Discover</a></li>
+				<li><a href="recommendations.html">Recommendations</a></li>
+				<li><a class="current">Profile</a></li>
+				<li><a href="contact_us.html">Contact Us</a></li>
+			</ul>
+		</div>	
+		<div id="content" style="margin-right:0px;">
+			<h1>Login</h1>
+			<form action='login.php' method='post'>
+				<table>
+					<tr>
+						<td>Username:</td>
+						<td><input type='text' id='user' name='user' required></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type='password' id='pass' name='pass' required></td>
+					</tr>
+				</table>
+				<input type='checkbox' id='remember' name='remember' value='remember'>
+				<label for='remember'>Remember Me</label>
+				<br>
+				<input type='submit' value='Login'>
+			</form>
+			<a href='registerpage.html'>New user? Register here</a>
+		</div>
+	</div>
+</html>

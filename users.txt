@@ -1,0 +1,5 @@
+jd1000:janepass:Jane Doe:Rap,EDM
+johnny123:johnpass:John Smith:Rock,Country
+bigbill12:billypass:Billy Joel:Rock,Rap,Classical,Pop
+bigF123:frankpass:Frank:Rock,Rap,Classical,EDM
+testuser:testpass:Test:Rock,Rap,Classical,Pop

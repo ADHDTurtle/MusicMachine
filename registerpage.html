@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Profile</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<div id="container">
+		<div id="top">
+			<a href="index.html">
+			<img src="logo.png" alt="Music Machine Logo" class="logo">
+			</a>
+			<ul class="navbar">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="discover.php">Discover</a></li>
+				<li><a href="recommendations.html">Recommendations</a></li>
+				<li><a class="current">Profile</a></li>
+				<li><a href="contact_us.html">Contact Us</a></li>
+			</ul>
+		</div>	
+		<div id="content" style="margin-right:0px;">
+			<h1>Register</h1>
+			<form action='register.php' method='post'>
+				<table>
+					<tr>
+						<td>Name:</td>
+						<td><input type='text' id='name' name='name'></td>
+					</tr>
+					<tr>
+						<td>Username:</td>
+						<td><input type='text' id='user' name='user' required></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type='password' id='pass' name='pass' required></td>
+					</tr>	
+					<tr>
+						<td>Favorite Music Genres:</td>
+						<td>
+							<input type='checkbox' id='rock' name='rock' value='rock'>
+							<label for='rock'>Rock</label>
+							<br>
+							<input type='checkbox' id='rap' name='rap' value='rap'>
+							<label for='rap'>Rap</label>
+							<br>
+							<input type='checkbox' id='country' name='country' value='country'>
+							<label for='country'>Country</label>
+							<br>
+							<input type='checkbox' id='classical' name='classical' value='classical'>
+							<label for='classical'>Classical</label>
+							<br>
+							<input type='checkbox' id='edm' name='edm' value='edm'>
+							<label for='edm'>EDM</label>
+							<br>
+							<input type='checkbox' id='pop' name='pop' value='pop'>
+							<label for='pop'>Pop</label>
+						</td>
+					</tr>	
+				</table>
+				<input type='submit' value='Register'>
+			</form>
+			<a href='loginpage.html'>Already have an account? Login here</a>
+		</div>
+	</div>
+</html>
