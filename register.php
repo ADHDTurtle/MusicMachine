@@ -45,13 +45,13 @@ $mysqli = new mysqli(
 if ($db->connect_errno) {
         die('Connect Error: ' . $db->connect_errno . ": " . $db->connect_error);
     }
-
 else{
-	//echo "working";
-	
-	$command = "SELECT * FROM MusicMachineAccounts WHERE username='".$entered_user."'";
+	$command = "SELECT * FROM MusicMachineAccounts WHERE username = '".$entered_user."'";
 	$result = $mysqli->query($command);
-	if(mysql_num_rows($result) != 0){
+	if(!$result){
+		die("Query failed: ($mysqli->error <br> SQL command = $command");
+	}
+	elseif(mysql_num_rows($result) != 0){
 		header("Refresh: 0; URL=registerpage.html");
 		echo "<script>alert('Username already taken');</script>";
 	}
@@ -62,6 +62,9 @@ else{
 		'".$entered_pass."',
 		'".$genres_str."')";
 		$result = $mysqli->query($command);
+		if(!$result){
+			die("Query failed: ($mysqli->error <br> SQL command = $command");
+		}
 		$_SESSION['username'] = $entered_user;
 		header("Refresh:0; URL=profile.html");
 	}
