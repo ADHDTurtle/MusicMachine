@@ -1,6 +1,7 @@
 <?php
 session_start();
-echo "working 1";
+header("Location: index.html");
+
 /*
 //username, password, name entered by user
 $entered_user = $_POST['user'];
