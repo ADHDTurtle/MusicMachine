@@ -38,6 +38,7 @@
 
 					$username = $_SESSION['username'];
 					//read from file to get info about this user
+					/*
 					$file = fopen('users.txt','r');
 					while(!feof($file)){
 						$currentline = fgets($file);
@@ -53,7 +54,19 @@
 						}
 					}
 					fclose($file);
-					
+					*/
+					$mysqli = new mysqli(
+						"fall-2020.cs.utexas.edu", 
+						"cs329e_bulko_ivanday", 
+						"Pizza3Crude-Mine", 
+						"cs329e_bulko_ivanday");
+
+					$command = "SELECT * FROM MusicMachineAccounts WHERE username = '".$username."'";
+					$result = $mysqli->query($command);
+					$row = $result->fetch_row();
+					$name = $row[0];
+					$password = $row[2];
+
 					$_SESSION['genres'] = $genres;
 
 					echo('
