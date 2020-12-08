@@ -66,7 +66,7 @@
 					$row = $result->fetch_row();
 					$name = $row[0];
 					$password = $row[2];
-
+					$genres = $row[3];
 					$_SESSION['genres'] = $genres;
 
 					echo('
