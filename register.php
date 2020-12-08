@@ -1,6 +1,6 @@
 <?php
 session_start();
-header("Location: index.html");
+header("Refresh: 0; URL=registerpage.html");
 
 /*
 //username, password, name entered by user
