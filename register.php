@@ -38,10 +38,10 @@ if ($db->connect_errno) {
         die('Connect Error: ' . $db->connect_errno . ": " . $db->connect_error);
     }
 
-if($entered_user == "" || $entered_pass == "" || $entered_name == ""){
+/*if($entered_user == "" || $entered_pass == "" || $entered_name == ""){
 	header("Refresh: 0; URL=registerpage.html");
 	echo "<script>alert('Please complete the fields above');</script>";	
-}
+}*/
 else{
 	$command = "SELECT * FROM MusicMachineAccounts WHERE username='".$entered_user."'";
 	$result = $mysqli->query($command);
@@ -54,7 +54,7 @@ else{
 		'".$entered_name."',
 		'".$entered_user."',
 		'".$entered_pass."',
-		'".$entered_genres."')";
+		'".$genres_str."')";
 		$result = $mysqli->query($command);
 		$_SESSION['username'] = $entered_user;
 		header("Refresh:0; URL=profile.php");
