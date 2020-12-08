@@ -1,10 +1,12 @@
 <?php
 session_start();
-
+echo "working 1";
+/*
 //username, password, name entered by user
 $entered_user = $_POST['user'];
 $entered_pass = $_POST['pass'];
 $entered_name = $_POST['name'];
+
 
 //array of favorite music genres entered by user
 $entered_genres = array();
@@ -39,13 +41,13 @@ if ($db->connect_errno) {
         die('Connect Error: ' . $db->connect_errno . ": " . $db->connect_error);
     }
 
-/*if($entered_user == "" || $entered_pass == "" || $entered_name == ""){
+if($entered_user == "" || $entered_pass == "" || $entered_name == ""){
 	header("Refresh: 0; URL=registerpage.html");
 	echo "<script>alert('Please complete the fields above');</script>";	
-}*/
+}
 else{
 	echo "working";
-	/*
+	
 	$command = "SELECT * FROM MusicMachineAccounts WHERE username='".$entered_user."'";
 	$result = $mysqli->query($command);
 	if(mysql_num_rows($result) > 0){
@@ -61,7 +63,7 @@ else{
 		$result = $mysqli->query($command);
 		$_SESSION['username'] = $entered_user;
 		header("Refresh:0; URL=profile.php");
-	}*/
+	}
 }
 
 //txt file containing usernames and passwords
@@ -100,6 +102,5 @@ else {
 
 	header("Refresh:0; url=profile.php");
 }*/
-
 
 ?>
