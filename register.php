@@ -34,13 +34,16 @@ $mysqli = new mysqli(
 			"cs329e_bulko_ivanday", 
 			"Pizza3Crude-Mine", 
 			"cs329e_bulko_ivanday");
+if ($db->connect_errno) {
+        die('Connect Error: ' . $db->connect_errno . ": " . $db->connect_error);
+    }
 
-if($entered_user=="" || $entered_pass == "" || $entered_name==""){
+if($entered_user == "" || $entered_pass == "" || $entered_name == ""){
 	header("Refresh: 0; URL=registerpage.html");
 	echo "<script>alert('Please complete the fields above');</script>";	
 }
 else{
-	$command = "SELECT * FROM MusicMachineAccounts WHERE username= '".$entered_user."'";
+	$command = "SELECT * FROM MusicMachineAccounts WHERE username='".$entered_user."'";
 	$result = $mysqli->query($command);
 	if(mysql_num_rows($result) > 0){
 		header("Refresh: 0; URL=registerpage.html");
@@ -54,7 +57,7 @@ else{
 		'".$entered_genres."')";
 		$result = $mysqli->query($command);
 		$_SESSION['username'] = $entered_user;
-		header("Refresh:0; url=profile.php");
+		header("Refresh:0; URL=profile.php");
 	}
 }
 
