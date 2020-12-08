@@ -63,7 +63,7 @@ else{
 			die("Query failed: ($mysqli->error <br> SQL command = $command");
 		}
 		$_SESSION['username'] = $entered_user;
-		header("Refresh:0; URL=profile.html");
+		header("Refresh:0; URL=profile.php");
 	}
 }
 
