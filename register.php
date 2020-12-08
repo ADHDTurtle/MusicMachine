@@ -4,9 +4,6 @@ session_start();
 error_reporting(E_ALL);
 ini_set("display_errors", "on");
 
-header("Refresh: 0; URL=registerpage.html");
-
-
 //username, password, name entered by user
 $entered_user = $_POST['user'];
 $entered_pass = $_POST['pass'];
@@ -52,7 +49,7 @@ else{
 		die("Query failed: ($mysqli->error <br> SQL command = $command");
 	}
 	elseif(mysql_num_rows($result) != 0){
-		header("Refresh: 0; URL=registerpage.html");
+		//header("Refresh: 0; URL=registerpage.html");
 		echo "<script>alert('Username already taken');</script>";
 	}
 	else{
