@@ -19,7 +19,7 @@ if(mysqli_num_rows($result) == 0){
 }
 else{
 	$row = $result->fetch_row();
-	if($row[1] == $entered_pass){
+	if($row[2] == $entered_pass){
 		$_SESSION['username'] = $entered_user;
 		setcookie('remember_this_user',$entered_user);
 		header("Refresh:0; url=profile.php");
