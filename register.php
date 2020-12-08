@@ -48,7 +48,7 @@ else{
 	if(!$result){
 		die("Query failed: ($mysqli->error <br> SQL command = $command");
 	}
-	elseif(mysql_num_rows($result) != 0){
+	elseif(mysqli_num_rows($result) != 0){
 		//header("Refresh: 0; URL=registerpage.html");
 		echo "<script>alert('Username already taken');</script>";
 	}
