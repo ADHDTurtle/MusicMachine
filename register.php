@@ -29,6 +29,12 @@ if (isset($_POST['pop'])) {
 //make string from values in array, each value separated by comma
 $genres_str = implode(',',$entered_genres);
 
+$mysqli = new mysqli(
+			"fall-2020.cs.utexas.edu", 
+			"cs329e_bulko_ivanday", 
+			"Pizza3Crude-Mine", 
+			"cs329e_bulko_ivanday");
+
 if($entered_user=="" || $entered_pass == "" || $entered_name==""){
 	header("Refresh: 0; URL=registerpage.html");
 	echo "<script>alert('Please complete the fields above');</script>";	
