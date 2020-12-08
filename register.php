@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+error_reporting(E_ALL);
+ini_set("display_errors", "on");
+
 header("Refresh: 0; URL=registerpage.html");
 
 /*
