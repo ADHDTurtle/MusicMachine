@@ -46,16 +46,12 @@ if ($db->connect_errno) {
         die('Connect Error: ' . $db->connect_errno . ": " . $db->connect_error);
     }
 
-if($entered_user == "" || $entered_pass == "" || $entered_name == ""){
-	header("Refresh: 0; URL=registerpage.html");
-	echo "<script>alert('Please complete the fields above');</script>";	
-}
 else{
-	echo "working";
+	//echo "working";
 	
 	$command = "SELECT * FROM MusicMachineAccounts WHERE username='".$entered_user."'";
 	$result = $mysqli->query($command);
-	if(mysql_num_rows($result) > 0){
+	if(mysql_num_rows($result) != 0){
 		header("Refresh: 0; URL=registerpage.html");
 		echo "<script>alert('Username already taken');</script>";
 	}
@@ -67,7 +63,7 @@ else{
 		'".$genres_str."')";
 		$result = $mysqli->query($command);
 		$_SESSION['username'] = $entered_user;
-		header("Refresh:0; URL=profile.php");
+		header("Refresh:0; URL=profile.html");
 	}
 }
 
