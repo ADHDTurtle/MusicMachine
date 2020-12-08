@@ -29,7 +29,31 @@ if (isset($_POST['pop'])) {
 //make string from values in array, each value separated by comma
 $genres_str = implode(',',$entered_genres);
 
+if($entered_user=="" || $entered_pass == "" || $entered_name==""){
+	header("Refresh: 0; URL=registerpage.html");
+	echo "<script>alert('Please complete the fields above');</script>";	
+}
+else{
+	$command = "SELECT * FROM MusicMachineAccounts WHERE username= '".$entered_user."'";
+	$result = $mysqli->query($command);
+	if(mysql_num_rows($result) > 0){
+		header("Refresh: 0; URL=registerpage.html");
+		echo "<script>alert('Username already taken');</script>";
+	}
+	else{
+		$command = "INSERT INTO MusicMachineAccounts VALUES(
+		'".$entered_name."',
+		'".$entered_user."',
+		'".$entered_pass."',
+		'".$entered_genres."')";
+		$result = $mysqli->query($command);
+		$_SESSION['username'] = $entered_user;
+		header("Refresh:0; url=profile.php");
+	}
+}
+
 //txt file containing usernames and passwords
+/*
 $users_file = fopen("users.txt",'r');
 
 //create arrays of existing usernames and passwords from users.txt
@@ -44,6 +68,7 @@ while (!feof($users_file)) {
 	array_push($existing_pass, $current_pass);
 }
 fclose($users_file);
+
 
 //check if username already exists
 if (in_array($entered_user,$existing_users)) {
@@ -62,7 +87,7 @@ else {
 	$_SESSION['username'] = $entered_user;
 
 	header("Refresh:0; url=profile.php");
-}
+}*/
 
 
 ?>
