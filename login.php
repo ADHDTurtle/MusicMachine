@@ -5,7 +5,33 @@ session_start();
 $entered_user = $_POST['user'];
 $entered_pass = $_POST['pass'];
 
+$mysqli = new mysqli(
+			"fall-2020.cs.utexas.edu", 
+			"cs329e_bulko_ivanday", 
+			"Pizza3Crude-Mine", 
+			"cs329e_bulko_ivanday");
+
+$command = "SELECT * FROM MusicMachineAccounts WHERE username = '".$entered_user."'";
+$result = $mysqli->query($command);
+if(mysqli_num_rows($result) == 0){
+	header("Refresh: 0; URL=loginpage.html");
+	echo "<script>alert('Username does not exist');</script>";
+}
+else{
+	$row = $result->fetch_row();
+	if($row[1] == $entered_pass){
+		$_SESSION['username'] = $entered_user;
+		setcookie('remember_this_user',$entered_user);
+		header("Refresh:0; url=profile.php");
+	}
+	else{
+		header("Refresh: 0; URL=loginpage.html");
+		echo "<script>alert('Incorrect password');</script>";
+	}
+}
+
 //txt file containing usernames and passwords
+/*
 $users_file = fopen("users.txt",'r');
 
 //create arrays of existing usernames and passwords from users.txt
@@ -50,6 +76,7 @@ else {
 
 	header("Refresh:0; url=loginpage.html");
 	echo("<script>alert('Username does not exist')</script>");
-}
+}*/
+
 
 ?>
