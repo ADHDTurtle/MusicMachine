@@ -39,8 +39,8 @@ $mysqli = new mysqli(
 			"Pizza3Crude-Mine", 
 			"cs329e_bulko_ivanday");
 
-if ($db->connect_errno) {
-        die('Connect Error: ' . $db->connect_errno . ": " . $db->connect_error);
+if ($mysqli->connect_errno) {
+        die('Connect Error: ' . $mysqli->connect_errno . ": " . $mysqli->connect_error);
     }
 else{
 	$command = "SELECT * FROM MusicMachineAccounts WHERE username = '".$entered_user."'";
