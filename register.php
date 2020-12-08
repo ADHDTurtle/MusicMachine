@@ -1,3 +1,3 @@
 <?php
-	header("Location: index.html");
+	echo "<script>alert('working');</script>";
 ?>
